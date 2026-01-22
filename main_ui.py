@@ -18,7 +18,7 @@ with col2:
 
 now = datetime.now()
 st.markdown(
-    f"<p style='text-align:center; color:gray;'>⏱ {now.strftime('%A, %d %B %Y | %I:%M:%S %p')}</p>",
+    f"<p style='text-align:center; color:gray;'>⏱ {now.strftime('%A, %d %B %Y | %I:%M %p')}</p>",
     unsafe_allow_html=True
 )
 
@@ -83,3 +83,4 @@ st.markdown(
     "<hr><center>Built with Streamlit • LangChain</center>",
     unsafe_allow_html=True
 )
+
