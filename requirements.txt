@@ -1,0 +1,27 @@
+# Requirements for the project
+
+streamlit # Web application framework
+
+fastapi # Web framework for building APIs
+
+uvicorn # ASGI server for FastAPI 
+
+requests # HTTP library for making requests
+
+python-dotenv # For loading environment variables from .env files
+
+langchain # it is a framework for developing applications powered by language models
+
+langchain-community # Community extensions for LangChain
+
+langchain-google-genai # it is a LangChain integration for Google GenAI
+
+langchain-classic # it is a LangChain integration for classic language models
+
+duckduckgo-search # used for searching the web via DuckDuckGo
+
+wikipedia # Wikipedia API wrapper, used for fetching information from Wikipedia
+
+arxiv # For accessing arXiv research papers
+
+ddgs # DuckDuckGo Search API wrapper
