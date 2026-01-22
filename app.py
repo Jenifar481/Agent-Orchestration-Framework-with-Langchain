@@ -2,13 +2,11 @@ from typing import Dict, Any
 from dotenv import load_dotenv
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.tools import DuckDuckGoSearchRun, WikipediaQueryRun, ArxivQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
 from langchain_classic.agents import create_react_agent, AgentExecutor
 from langchain_classic import hub
-
 load_dotenv()
 
 # ------------------ LLM ------------------
@@ -75,3 +73,4 @@ def run_pipeline(query: str) -> Dict[str, Any]:
         "summary": summary,
         "email": email
     }
+
