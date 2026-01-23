@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+from app import run_pipeline
 from datetime import datetime
 import time
 
@@ -39,10 +40,9 @@ with col1:
 
 if run and query:
     with st.spinner("Agents are working... Please wait"):
-        response = requests.post(API_URL, json={"query": query})
-        st.session_state.result = response.json()
+       st.session_state.result = run_pipeline(query)
 
-# ✅ Tabs are ALWAYS visible
+# Tabs 
 tab1, tab2, tab3 = st.tabs(
     ["📚 Research Agent", "🕮 Summary Agent", "✉︎⌯⌲ Email Agent"]
 )
@@ -83,6 +83,7 @@ st.markdown(
     "<hr><center>Built with Streamlit • LangChain</center>",
     unsafe_allow_html=True
 )
+
 
 
 
