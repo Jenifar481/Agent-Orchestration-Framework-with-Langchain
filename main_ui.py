@@ -30,7 +30,7 @@ if "result" not in st.session_state:
     st.session_state.result = None
 
 query = st.text_area("🔍︎ Enter your research topic:", placeholder="E.g., AI in Healthcare", height=100,
-    help="Enter a topic and the agents will research, summarize, and draft an email", max_chars=2000)
+    help="Enter a topic and the agents will research, summarize, and draft an email")
 
 
 col1, col2 = st.columns([1,1])
@@ -83,6 +83,7 @@ st.markdown(
     "<hr><center>Built with Streamlit • LangChain</center>",
     unsafe_allow_html=True
 )
+
 
 
 
