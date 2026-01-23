@@ -20,7 +20,27 @@ arxiv = ArxivQueryRun()
 tools = [wiki, web, arxiv]
 
 # ------------------ PROMPT ------------------
-prompt = hub.pull("hwchase17/react")
+base_prompt = hub.pull("hwchase17/react")
+
+prompt = base_prompt.partial(
+    instructions="""
+You are an advanced AI research assistant comparable to ChatGPT and other leading AI models.
+
+MANDATORY OUTPUT REQUIREMENTS:
+- The final answer MUST be long, detailed, and multi-section.
+- Write a minimum of 8-12 structured sections with clear headings.
+- Each section must contain multiple paragraphs (not bullet-only).
+- Expand explanations with background, context, examples, implications, and practical insights.
+- Do NOT summarize early or shorten the response.
+- Assume the reader expects an in-depth AI-generated explanation, not a quick answer.
+- Prefer completeness, clarity, and depth over brevity at all times.
+
+Research behavior:
+- Perform deep research using all relevant tools when needed.
+- Cross-verify information conceptually.
+- Explain concepts as ChatGPT would in a long-form response.
+"""
+)
 
 # ------------------ RESEARCH AGENT ------------------
 research_agent = create_react_agent(
@@ -73,4 +93,5 @@ def run_pipeline(query: str) -> Dict[str, Any]:
         "summary": summary,
         "email": email
     }
+
 
