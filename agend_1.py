@@ -69,3 +69,4 @@ agent_executor = AgentExecutor(
 #step 5: invoke the agent executor with a query
 response = agent_executor.invoke({'input':"What is the capital of Tamil Nadu. Find it's current weather condition "})
 print(response)
+
