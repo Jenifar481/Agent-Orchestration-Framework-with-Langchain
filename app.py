@@ -10,7 +10,7 @@ from langchain_classic import hub
 load_dotenv()
 
 # ------------------ LLM ------------------
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
 # ------------------ TOOLS ------------------
 wiki = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
@@ -93,6 +93,7 @@ def run_pipeline(query: str) -> Dict[str, Any]:
         "summary": summary,
         "email": email
     }
+
 
 
 
